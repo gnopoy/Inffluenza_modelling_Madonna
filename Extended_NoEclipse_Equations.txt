@@ -1,0 +1,33 @@
+METHOD RK4
+
+STARTTIME = 0
+STOPTIME=14
+DT = 0.01
+
+d/dt(T) = -((ke*kf*kb)/(kd+(ke*kf)))*V*T-k2*F*T+k3*R 			
+d/dt(R)= k2*F*T-k3*R				
+d/dt(I) =-((ke*kf*kb)/(kd+(ke*kf)))*V*T-k4*I*k5*I*F 				
+d/dt(V) = k6*I-k7*V 				
+d/dt(F)= k8*I-k9*F 				
+
+
+init T = 350000000000
+init F = 1.0
+init V = 100
+init R = 0.0
+init I = 0.0
+
+ke= 0.0001
+kf=0.001
+kd=0.00002
+kb=0.2 				
+k2 = 0.05 			
+k3 = 0.01 				
+k4 = 2 					
+k5= 1.2 				
+k6= 0.00002				 
+k7= 10 					
+k8 =0.0000000001 			
+k9 =0.1 				
+
+
